@@ -1,6 +1,7 @@
 # All Command for Devops Engineer
 
 ## Install Docker Engine
+for linux (ubuntu)
 ```bash
 sudo apt update
 sudo apt install docker.io
@@ -22,26 +23,35 @@ Docker related commands
 ```bash
 # build the docker image
 docker build -t <your-dockerhub-username>/<image-name>:<tag> .
+
 # Docker image run
 docker run -d -p <host-port>:<container-port> -t <your-dockerhub-username>/<image-name>:<tag>
+
 # push in docker hub
 docker push <your-dockerhub-username>/<image-name>:<tag>
+
 # Displays running containers:
 docker ps
+
 # docker ps -a
 docker ps -a
+
 # stop the docker running container
 docker stop <container-id or container-name>
+
 # Removes a stopped container:
 docker rm <container-id or container-name>
+
 # Deletes an image from the local system:
 docker rmi <image-name>:<tag>
+
 # Removes all Docker images:
 docker rmi $(docker images -q)
+
 # View details about a container (e.g., configuration, network settings):
 docker inspect <container-id or container-name>
 ```
-## 2. Install kubectl eksctl AWS CLI
+## 2. Install kubectl,eksctl,aws-cli
 
 install aws cli
 
