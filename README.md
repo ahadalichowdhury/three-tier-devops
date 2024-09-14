@@ -6,7 +6,7 @@ for linux (ubuntu)
 sudo apt update
 sudo apt install docker.io
 sudo su -
-usermod -aG docker ubuntu
+usermod -aG docker $(whoami)
 systemctl restart docker
 ```
 check docker version and make sure that the Docker is running
