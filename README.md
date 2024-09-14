@@ -120,7 +120,14 @@ After 2 minutes, run the command below to check whether your pods are running or
 ```bash
 kubectl get deployment -n kube-system aws-load-balancer-controller
 ```
-## 5.Install Argo CD
+## 5.Install Nginx Load Balancer Ingress Controller 
+
+Deploy the below manifest
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.1/deploy/static/provider/aws/deploy.yaml
+```
+## 6.Install Argo CD
 
 Install Argo CD using manifests
 
