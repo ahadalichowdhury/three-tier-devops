@@ -75,7 +75,8 @@ sudo ./aws/install
 install eksctl
 
 ```bash
-curl -s --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+curl -s --location "https://github.com/weaveworks/eksctl/releases/download/v0.149.0/ek
+sctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
