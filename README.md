@@ -16,8 +16,8 @@ for linux (ubuntu)
 ```bash
 sudo apt update
 sudo apt install docker.io
-sudo su -
 usermod -aG docker $(whoami)
+newgrp docker
 systemctl restart docker
 ```
 check docker version and make sure that the Docker is running
