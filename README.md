@@ -145,18 +145,23 @@ kubectl get deployment -n kube-system aws-load-balancer-controller
 ## if you use the alb , it has a problem that, when you apply ingess and delete it, and again apply, you can notice alb address will change each time, you need to add more things for to set External-DNS
 ```bash
 # Create a Kubernetes Secret to store AWS credentials: If you're not using IAM roles (e.g., you're running your cluster outside of AWS), you can manually pass AWS access credentials via a secret:
+
 kubectl create secret generic aws-credentials \
   --from-literal=aws_access_key_id=<YOUR_AWS_ACCESS_KEY_ID> \
   --from-literal=aws_secret_access_key=<YOUR_AWS_SECRET_ACCESS_KEY>
+
 # When installing External-DNS with Helm, you can provide additional configuration to point it to AWS Route 53 and pass in the correct credentials or IAM role.
 helm install external-dns bitnami/external-dns \
   --set provider=aws \
   --set aws.zoneType=public \
   --set aws.accessKey=YOUR_AWS_ACCESS_KEY_ID \
   --set aws.secretKey=YOUR_AWS_SECRET_ACCESS_KEY
+
 # then your ingress file, under the annotations add this
 external-dns.alpha.kubernetes.io/hostname: "api.yourdomain.com"
+
 # note: make sure you aws iam rules eksctl-demo-cluster-nodegroup-ng-4-NodeInstanceRole specified the s3 or administratorAccess
+
 # then test your dns
 nslookup crud.yourdomain.com
 
