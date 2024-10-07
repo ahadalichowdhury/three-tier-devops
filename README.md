@@ -199,4 +199,8 @@ Get the Loadbalancer service IP
 ```bash
 kubectl get svc argocd-server -n argocd
 ```
+Get the argocd login password
 
+```bash
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 --decode
+```
