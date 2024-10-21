@@ -16,7 +16,7 @@ for linux (ubuntu)
 ```bash
 sudo apt update
 sudo apt install docker.io
-usermod -aG docker $(whoami)
+sudo usermod -aG docker $(whoami)
 newgrp docker
 systemctl restart docker
 ```
